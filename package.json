@@ -13,5 +13,8 @@
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
     "openai": "^4.33.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
   }
 }
