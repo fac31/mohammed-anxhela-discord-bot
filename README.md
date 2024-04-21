@@ -32,5 +32,13 @@ Create a ```.env``` file in the root directory and enter your API Key and Discor
 Start your bot in the terminal to bring it online:
 node index.js
 
+## What are the available commands that I can use?
+* ```!help```: provides information about the available commands.
+* ```!hello```: it typically triggers a response from the bot or system, which could be a simple greeting message like "Hello!".
+* ```!quote```: retrieves a random quote from a collection. It's a fun way to share inspiring, humorous, or thought-provoking quotes within a community.
+* ```!calculate```: perform calculations or mathematical operations within a chat.
+* ```!pong```:  used to check the responsiveness or latency of a network connection to a server. When you send !ping to the bot, it will respond with a 'pong'.
+* ```!senddm```: used to send a direct message (DM) to another user privately. _Example: !senddm @Angelab_
+
 ## What are some development practices that we followed? 
 We used ```ESLint``` and ```Prettier``` that help with maintaining consistent code formatting and style, identifying errors, enforcing coding standards, and improving overall code quality. They can catch syntax errors, enforce coding conventions, and automatically format code according to predefined rules, making codebases more manageable and readable, especially in collaborative settings.
