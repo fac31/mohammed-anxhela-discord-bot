@@ -39,6 +39,7 @@ node index.js
 * ```!calculate```: perform calculations or mathematical operations within a chat.
 * ```!pong```:  used to check the responsiveness or latency of a network connection to a server. When you send !ping to the bot, it will respond with a 'pong'.
 * ```!senddm```: used to send a direct message (DM) to another user privately. _Example: !senddm @Angelab_
+* ```!createchannel```: used to create a private channel.
 
 ## What are some development practices that we followed? 
 We used ```ESLint``` and ```Prettier``` that help with maintaining consistent code formatting and style, identifying errors, enforcing coding standards, and improving overall code quality. They can catch syntax errors, enforce coding conventions, and automatically format code according to predefined rules, making codebases more manageable and readable, especially in collaborative settings.
