@@ -67,11 +67,11 @@ client.on('messageCreate', async (message) => {
                         return;
                     }
                     if (!user.bot && user.id !== client.user.id) {
-                        user.send('This is a direct message from the bot!')
+                            user.send(`${message.author.displayName}: ${message.content.replace(`!senddm <@${user.id}>`, "")}`)
                             .then(() => message.reply('Direct message sent successfully!'))
                             .catch((error) => message.reply('Failed to send direct message. Please make sure the user allows direct messages from server members.'));
                     } else {
-                        message.reply('You cannot send direct messages to bots or to yourself.');
+                            message.reply('You cannot send direct messages to bots or to yourself.');
                     }
                     break;
                     case 'createchannel':
