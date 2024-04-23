@@ -2,12 +2,39 @@ const { PermissionsBitField, ChannelType } = require('discord.js');
 const frq = require('../utils/fetchRandomQuote');
 const { generateResponse } = require('./generateResponse');
 
+// Define a map to store users who are temporarily muted
+const mutedUsers = new Set();
 
 // Event listener for incoming messages
 const messageHandler = async (client,message) => {
     try {
         // Check if message is from a bot or not in a guild
         if (message.author.bot || !message.guild) return;
+
+        // Check if the user is temporarily muted
+        if (mutedUsers.has(message.author.id)) {
+            // Inform the user that they are muted
+            return message.reply('You are temporarily muted. Please wait before sending another message.')
+                .catch(error => {
+                    console.error("Error sending muted message:", error);
+                });
+        }
+
+        // Check for specific keywords or patterns
+        if (message.content.toLowerCase().includes('inappropriate_keyword')) {
+            // Delete the message
+            await message.delete();
+            // Log the deleted message
+            console.log(`Message containing inappropriate keyword deleted: ${message.content}`);
+
+            // Mute the user for 5 minutes
+            mutedUsers.add(message.author.id);
+            setTimeout(() => {
+                mutedUsers.delete(message.author.id);
+            }, 5 * 60 * 1000); // 5 minutes
+
+            return; // Stop processing further if message is deleted
+        }
 
         // Show typing indicator
         message.channel.sendTyping();
