@@ -41,5 +41,10 @@ node index.js
 * ```!senddm```: used to send a direct message (DM) to another user privately. _Example: !senddm @Angelab_
 * ```!createchannel```: used to create a private channel.
 
+## Any additional features?
+* Response Splitting: Our Discord bot splits responses into two messages if they exceed 3000 characters, ensuring readability and preventing message truncation.
+* Content Moderation: The bot actively monitors and removes inappropriate messages, maintaining a positive and safe environment for all users.
+* User Muting: In cases where inappropriate behavior persists, the bot automatically mutes the offending user for 5 minutes, enforcing community guidelines and promoting respectful interactions.
+
 ## What are some development practices that we followed? 
 We used ```ESLint``` and ```Prettier``` that help with maintaining consistent code formatting and style, identifying errors, enforcing coding standards, and improving overall code quality. They can catch syntax errors, enforce coding conventions, and automatically format code according to predefined rules, making codebases more manageable and readable, especially in collaborative settings.
